@@ -20,7 +20,24 @@
 		45766A692743AAA400F59FDA /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45766A682743AAA400F59FDA /* NewConversationViewController.swift */; };
 		45766A6B2743AABF00F59FDA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45766A6A2743AABF00F59FDA /* ProfileViewController.swift */; };
 		45766A6E2743C0BA00F59FDA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45766A6D2743C0BA00F59FDA /* Extensions.swift */; };
+		45A149E22746A4B1000197C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45A149E12746A4B1000197C6 /* GoogleService-Info.plist */; };
+		45BFAC7C2813FE8A0051CF3E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BFAC7B2813FE8A0051CF3E /* DatabaseManager.swift */; };
+		45C72F6927666C97003BBC8E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 45C72F6827666C97003BBC8E /* FirebaseAuth */; };
+		45C72F6B27666C97003BBC8E /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 45C72F6A27666C97003BBC8E /* FirebaseDatabase */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		45FB14352766603100B8AE34 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		45766A432743A87A00F59FDA /* ChatWithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatWithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,6 +55,8 @@
 		45766A682743AAA400F59FDA /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		45766A6A2743AABF00F59FDA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		45766A6D2743C0BA00F59FDA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		45A149E12746A4B1000197C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		45BFAC7B2813FE8A0051CF3E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45C72F6B27666C97003BBC8E /* FirebaseDatabase in Frameworks */,
+				45C72F6927666C97003BBC8E /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +75,7 @@
 		45766A3A2743A87A00F59FDA = {
 			isa = PBXGroup;
 			children = (
+				45A149E12746A4B1000197C6 /* GoogleService-Info.plist */,
 				45766A452743A87A00F59FDA /* ChatWithMe */,
 				45766A442743A87A00F59FDA /* Products */,
 			);
@@ -122,6 +144,7 @@
 				45766A462743A87A00F59FDA /* AppDelegate.swift */,
 				45766A482743A87A00F59FDA /* SceneDelegate.swift */,
 				45766A6D2743C0BA00F59FDA /* Extensions.swift */,
+				45BFAC7B2813FE8A0051CF3E /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -154,12 +177,17 @@
 				45766A3F2743A87A00F59FDA /* Sources */,
 				45766A402743A87A00F59FDA /* Frameworks */,
 				45766A412743A87A00F59FDA /* Resources */,
+				45FB14352766603100B8AE34 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ChatWithMe;
+			packageProductDependencies = (
+				45C72F6827666C97003BBC8E /* FirebaseAuth */,
+				45C72F6A27666C97003BBC8E /* FirebaseDatabase */,
+			);
 			productName = ChatWithMe;
 			productReference = 45766A432743A87A00F59FDA /* ChatWithMe.app */;
 			productType = "com.apple.product-type.application";
@@ -188,6 +216,9 @@
 				Base,
 			);
 			mainGroup = 45766A3A2743A87A00F59FDA;
+			packageReferences = (
+				45C72F6727666C97003BBC8E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 45766A442743A87A00F59FDA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -203,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45766A532743A87C00F59FDA /* LaunchScreen.storyboard in Resources */,
+				45A149E22746A4B1000197C6 /* GoogleService-Info.plist in Resources */,
 				45766A502743A87C00F59FDA /* Assets.xcassets in Resources */,
 				45766A4E2743A87A00F59FDA /* Main.storyboard in Resources */,
 			);
@@ -216,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45766A612743AA3100F59FDA /* LoginViewController.swift in Sources */,
+				45BFAC7C2813FE8A0051CF3E /* DatabaseManager.swift in Sources */,
 				45766A632743AA4F00F59FDA /* RegisterViewController.swift in Sources */,
 				45766A692743AAA400F59FDA /* NewConversationViewController.swift in Sources */,
 				45766A4B2743A87A00F59FDA /* ConversationsViewController.swift in Sources */,
@@ -359,6 +392,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -446,6 +480,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		45C72F6727666C97003BBC8E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		45C72F6827666C97003BBC8E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C72F6727666C97003BBC8E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		45C72F6A27666C97003BBC8E /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C72F6727666C97003BBC8E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 45766A3B2743A87A00F59FDA /* Project object */;
 }
