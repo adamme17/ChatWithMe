@@ -88,19 +88,16 @@ extension NewConversationViewController: UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let targetUserData = results[indexPath.row]
-        
+
         dismiss(animated: true, completion: { [weak self] in
             self?.completion?(targetUserData)
         })
-        
-        
-        completion?(targetUserData)
     }
 }
 
 extension NewConversationViewController: UISearchBarDelegate {
     
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.replacingOccurrences(of: "", with: "").isEmpty else {
             return
         }
@@ -114,10 +111,13 @@ extension NewConversationViewController: UISearchBarDelegate {
     }
     
     func searchUsers(query: String) {
+        //
         if hasFetched {
+            //
             filterUsers(with: query)
         }
         else {
+            // if not, fetch then filter
             DatabaseManager.shared.getAllUsers(completion: { [weak self] result in
                 switch result {
                 case .success(let usersCollection):
@@ -129,9 +129,10 @@ extension NewConversationViewController: UISearchBarDelegate {
                 }
             })
         }
-        //
     }
+    
     func filterUsers(with term: String) {
+        // Update the UI
         guard hasFetched else {
             return
         }
@@ -142,12 +143,15 @@ extension NewConversationViewController: UISearchBarDelegate {
             guard let name = $0["name"]?.lowercased() else {
                 return false
             }
+            
             return name.hasPrefix(term.lowercased())
         })
+        
         self.results = results
         
         updateUI()
     }
+    
     func updateUI() {
         if results.isEmpty {
             self.noResultsLabel.isHidden = false

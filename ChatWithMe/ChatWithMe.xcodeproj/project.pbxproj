@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		452254262821CBA500426E3A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 452254252821CBA500426E3A /* FirebaseAuth */; };
 		452254282821CBA500426E3A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 452254272821CBA500426E3A /* FirebaseDatabase */; };
+		4559FA04282FF11900DA9127 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4559FA03282FF11800DA9127 /* ConversationTableViewCell.swift */; };
 		45766A472743A87A00F59FDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45766A462743A87A00F59FDA /* AppDelegate.swift */; };
 		45766A492743A87A00F59FDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45766A482743A87A00F59FDA /* SceneDelegate.swift */; };
 		45766A4B2743A87A00F59FDA /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45766A4A2743A87A00F59FDA /* ConversationsViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4559FA03282FF11800DA9127 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		45766A432743A87A00F59FDA /* ChatWithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatWithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45766A462743A87A00F59FDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45766A482743A87A00F59FDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				45766A5F2743A92F00F59FDA /* Storyboards */,
 				45766A4F2743A87C00F59FDA /* Assets.xcassets */,
+				4559FA03282FF11800DA9127 /* ConversationTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				45766A472743A87A00F59FDA /* AppDelegate.swift in Sources */,
 				45766A6B2743AABF00F59FDA /* ProfileViewController.swift in Sources */,
 				45766A492743A87A00F59FDA /* SceneDelegate.swift in Sources */,
+				4559FA04282FF11900DA9127 /* ConversationTableViewCell.swift in Sources */,
 				45A196292826B75600749B20 /* ChatViewController.swift in Sources */,
 				45766A652743AA7500F59FDA /* PhotoViewerViewController.swift in Sources */,
 				459A28E92827088300085D6E /* StorageManager.swift in Sources */,
