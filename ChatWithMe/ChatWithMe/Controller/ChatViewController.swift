@@ -57,6 +57,7 @@ class ChatViewController: MessagesViewController {
         formatter.dateStyle = .medium
         formatter.timeStyle = .long
         formatter.locale = .current
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         return formatter
     }()
     
@@ -99,20 +100,21 @@ class ChatViewController: MessagesViewController {
     private func listenForMessages(id: String, shouldScrollToBottom: Bool) {
         DatabaseManager.shared.getAllMessagesForConversation(with: id,
                                                              completion: { [weak self] result in
-            guard let self = self else { return }
+//            guard let self = self else { return }
             switch result {
             case .success(let messages):
+                print("Success in getting messages")
                 guard !messages.isEmpty else {
                     print("messages are empty")
                     return
                 }
-                self.messages = messages
+                self?.messages = messages
                 
                 DispatchQueue.main.async {
-                    self.messagesCollectionView.reloadDataAndKeepOffset()
+                    self?.messagesCollectionView.reloadDataAndKeepOffset()
                     
                     if shouldScrollToBottom {
-                        self.messagesCollectionView.scrollToLastItem()
+                        self?.messagesCollectionView.scrollToBottom()
                     }
                 }
                 
@@ -143,7 +145,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
         let messageId = UUID().uuidString
         print("Sending: \(text)")
         
-        let message = Message(sender: selfSender,
+        let mmessage = Message(sender: selfSender,
                               messageId: messageId,
                               sentDate: Date(),
                               kind: .text(text))
@@ -153,7 +155,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             
             DatabaseManager.shared.createNewConversation(with: otherUserEmail,
                                                          name: self.title ?? "User",
-                                                         firstMessage: message,
+                                                         firstMessage: mmessage,
                                                          completion: { [weak self] success in
                 if success {
                     print("message sent")
@@ -164,7 +166,16 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
             })
         }
         else {
-            
+            guard let conversationId = conversationId, let name = self.title else {
+                return
+            }
+            DatabaseManager.shared.sendMessage(to: conversationId, otherUserEmail: otherUserEmail, name: name, newMessage: mmessage, completion: { success in
+                if success {
+                    print("message sent")
+                } else {
+                    print("failed to send")
+                }
+            })
         }
     }
     
