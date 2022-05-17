@@ -71,6 +71,8 @@ class LoginViewController: UIViewController {
     
     private let facebookLoginButton: FBLoginButton = {
         let button = FBLoginButton()
+        button.layer.cornerRadius = 12
+        button.layer.masksToBounds = true
         button.permissions = ["email,public_profile"]
         return button
     }()
@@ -219,26 +221,6 @@ extension LoginViewController: LoginButtonDelegate {
             print("User failed to log in with facebook")
             return
         }
-        
-//        let facebookRequest = FBSDKLoginKit.GraphRequest(graphPath: "me",
-//                                                         parameters: ["fields": "email, name"],
-//                                                         tokenString: token,
-//                                                         version: nil,
-//                                                         httpMethod: .get)
-
-//        guard let userName = result["name"] as? String,
-//              let email = result["email"] as? String else {
-//                print("Failed to get email and name from fb result")
-//                return
-//        }
-//
-//        let nameComponents = userName.components(separatedBy: " ")
-//        guard nameComponents.count == 2 else {
-//            return
-//        }
-//
-//        let firstName = nameComponents[0]
-//        let lastName = nameComponents[1]
         
         let credential = FacebookAuthProvider.credential(withAccessToken: token)
         

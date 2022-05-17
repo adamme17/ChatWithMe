@@ -107,13 +107,6 @@ class RegisterViewController: UIViewController {
         title = "Sign Up"
         view.backgroundColor = .white
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Up",
-                                                            style: .done,
-                                                            target: self,
-                                                            action: #selector(didTapRegister))
-
-        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
-
         emailField.delegate = self
         passwordField.delegate = self
 

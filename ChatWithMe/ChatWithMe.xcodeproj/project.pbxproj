@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4515112E2833DD6600351FF7 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515112D2833DD6600351FF7 /* LocationPickerViewController.swift */; };
 		452254262821CBA500426E3A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 452254252821CBA500426E3A /* FirebaseAuth */; };
 		452254282821CBA500426E3A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 452254272821CBA500426E3A /* FirebaseDatabase */; };
 		4559FA04282FF11900DA9127 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4559FA03282FF11800DA9127 /* ConversationTableViewCell.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4515112D2833DD6600351FF7 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 		4559FA03282FF11800DA9127 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		45766A432743A87A00F59FDA /* ChatWithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatWithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45766A462743A87A00F59FDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				45766A682743AAA400F59FDA /* NewConversationViewController.swift */,
 				45766A6A2743AABF00F59FDA /* ProfileViewController.swift */,
 				45A196282826B75600749B20 /* ChatViewController.swift */,
+				4515112D2833DD6600351FF7 /* LocationPickerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				4559FA04282FF11900DA9127 /* ConversationTableViewCell.swift in Sources */,
 				45A196292826B75600749B20 /* ChatViewController.swift in Sources */,
 				45766A652743AA7500F59FDA /* PhotoViewerViewController.swift in Sources */,
+				4515112E2833DD6600351FF7 /* LocationPickerViewController.swift in Sources */,
 				459A28E92827088300085D6E /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

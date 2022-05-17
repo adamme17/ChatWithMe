@@ -24,7 +24,8 @@ class ProfileViewController: UIViewController {
     }
     
     func createTableHeader() -> UIView? {
-        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String,
+              let name = UserDefaults.standard.value(forKey: "name") as? String else {
             return nil
         }
         
@@ -37,12 +38,11 @@ class ProfileViewController: UIViewController {
                                         width: self.view.width,
                                         height: 300))
         
-        headerView.backgroundColor = .link
         
-        let imageView = UIImageView(frame: CGRect(x: (headerView.width-150) / 2,
+        let imageView = UIImageView(frame: CGRect(x: (headerView.width-200) / 2,
                                                   y: 75,
-                                                  width: 150,
-                                                  height: 150))
+                                                  width: 200,
+                                                  height: 200))
         imageView.contentMode = .scaleAspectFill
         imageView.backgroundColor = .white
         imageView.layer.borderColor = UIColor.white.cgColor
@@ -50,6 +50,13 @@ class ProfileViewController: UIViewController {
         imageView.layer.masksToBounds = true
         imageView.layer.cornerRadius = imageView.width/2
         headerView.addSubview(imageView)
+        
+        let label = UILabel(frame: CGRect(x: (headerView.width-200) / 2, y: -20, width: 200, height: 100))
+        label.text = "\(name)"
+//        label.center = CGPoint(x: 160, y: 285)
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 25)
+        headerView.addSubview(label)
         
         StorageManager.shared.dowmloadURL(for: path, completion: { [weak self] result in
             switch result {
@@ -96,7 +103,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let actionSheet = UIAlertController(title: "",
-                                      message: "",
+                                      message: "Are you sure you want to log out?",
                                       preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "Log Out",
                                       style: .destructive,
