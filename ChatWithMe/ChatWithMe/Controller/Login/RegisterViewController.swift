@@ -124,6 +124,8 @@ class RegisterViewController: UIViewController {
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfilePic))
 
         imageView.addGestureRecognizer(gesture)
+        
+        registerButton.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
     }
 
     @objc private func didTapChangeProfilePic() {
@@ -198,13 +200,13 @@ class RegisterViewController: UIViewController {
             
             guard !exists else {
                 // user already exists
-                strongSelf.alertUserLoginError(message: "Looks like a user account for that email address already exists.")
+                strongSelf.alertUserLoginError(message: "Looks like a user account for that email address already exists🙁")
                 return
             }
             
             FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { authResult, error in
                 guard authResult != nil, error == nil else {
-                    print("Error cureating user")
+                    print("Error creating user")
                     return
                 }
             
@@ -238,7 +240,7 @@ class RegisterViewController: UIViewController {
     }
 
     func alertUserLoginError(message: String = "Please enter all information to create a new account.") {
-        let alert = UIAlertController(title: "Woops",
+        let alert = UIAlertController(title: "Woops🤪",
                                       message: message,
                                       preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss",

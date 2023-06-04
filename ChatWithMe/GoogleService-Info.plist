@@ -7,7 +7,7 @@
 	<key>REVERSED_CLIENT_ID</key>
 	<string>com.googleusercontent.apps.658478945572-7ks3t080tdjhgi8op4khqht5edr3ftg1</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBan9BblgcDP6yXoqu_uORlg8xzeAaFqJ4</string>
+	<string>AIzaSyDkb-OfvIBt3xKOSzJX896u00QZX7T10kU</string>
 	<key>GCM_SENDER_ID</key>
 	<string>658478945572</string>
 	<key>PLIST_VERSION</key>
@@ -19,15 +19,15 @@
 	<key>STORAGE_BUCKET</key>
 	<string>chat-with-me-98ce9.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:658478945572:ios:b9fc3174b08f2bda03cfb1</string>
 </dict>

@@ -100,10 +100,11 @@ class ChatViewController: MessagesViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = .red
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        messagesCollectionView.messageCellDelegate = self
         messageInputBar.delegate = self
         setupInputButton()
     }
@@ -257,6 +258,8 @@ extension ChatViewController: InputBarAccessoryViewDelegate {
               let selfSender = self.selfSender else { return
         }
         
+        inputBar.inputTextView.text.removeAll()
+        
         let messageId = UUID().uuidString
         print("Sending: \(text)")
         
@@ -404,3 +407,93 @@ extension ChatViewController: MessagesDataSource, MessagesLayoutDelegate, Messag
 
         }
 }
+
+extension ChatViewController: MessageCellDelegate {
+    func didTapMessage(in cell: MessageCollectionViewCell) {
+        guard let indexPath = messagesCollectionView.indexPath(for: cell) else {
+            return
+        }
+
+        let message = messages[indexPath.section]
+        let requestManager = RequestManager()
+
+        switch message.kind {
+        case .text(let text):
+            requestManager.analyze(endPoint: .analyze(message: text)) { response in
+                switch response {
+                case .success(let result):
+                    
+                    print(result.emotion)
+                    
+                    var analyzedText = ""
+                    
+                    if result.emotion == "neutral" {
+                        analyzedText = "Seems that this message is neutral"
+                    }
+                    if result.emotion == "fear" {
+                        analyzedText = "The author of the message seems to be scared😨"
+                    }
+                    if result.emotion == "anger" {
+                        analyzedText = "The author of the message seems to be angry😠"
+                    }
+                    if result.emotion == "joy" {
+                        analyzedText = "The author of the message seems to be very happy😊"
+                    }
+                    if result.emotion == "sadness" {
+                        analyzedText = "The message seems sad😢"
+                    }
+                    
+                    let alert = UIAlertController(title: result.emotion,
+                                                  message: analyzedText,
+                                                  preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "OK",
+                                                      style: .default,
+                                                      handler: nil))
+                    DispatchQueue.main.async {
+                        self.present(alert, animated: true, completion: nil)
+                    }
+               
+                case .failure(let error):
+                    print(error)
+                }
+
+            }
+            print(text)
+        case .attributedText(let text):
+            let message = text.length
+        case .location(let locationData):
+            let coordinates = locationData.location.coordinate
+            let vc = LocationPickerViewController(coordinates: coordinates)
+            
+            vc.title = "Location"
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
+    }
+
+    func didTapImage(in cell: MessageCollectionViewCell) {
+        guard let indexPath = messagesCollectionView.indexPath(for: cell) else {
+            return
+        }
+
+        let message = messages[indexPath.section]
+
+        switch message.kind {
+        case .photo(let media):
+            guard let imageUrl = media.url else {
+                return
+            }
+            let vc = PhotoViewerViewController(with: imageUrl)
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            break
+        }
+    }
+}
+
+
+
+
+
+

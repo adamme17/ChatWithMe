@@ -168,9 +168,24 @@ extension ConversationsViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: ConversationTableViewCell.identifier,
                                                  for: indexPath) as! ConversationTableViewCell
         cell.configure(with: model)
+//        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(cellTapped))
+//          cell.addGestureRecognizer(tapGesture)
         return cell
     }
     
+//    @objc func cellTapped(_ sender: UITapGestureRecognizer) {
+//        // Get the index path of the cell that was tapped
+//        guard let cell = sender.view as? UITableViewCell else { return }
+//        guard let indexPath = tableView.indexPath(for: cell) else { return }
+//
+//        // Show an alert view with a message
+//        let model = conversations[indexPath.row]
+//        let message = "You tapped on conversation with ID \(model.id)"
+//        let alert = UIAlertController(title: "Cell Tapped", message: message, preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//        present(alert, animated: true, completion: nil)
+//    }
+//
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let model = conversations[indexPath.row]

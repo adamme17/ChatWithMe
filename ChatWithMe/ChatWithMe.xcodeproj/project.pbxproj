@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4515112E2833DD6600351FF7 /* LocationPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4515112D2833DD6600351FF7 /* LocationPickerViewController.swift */; };
-		452254262821CBA500426E3A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 452254252821CBA500426E3A /* FirebaseAuth */; };
-		452254282821CBA500426E3A /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 452254272821CBA500426E3A /* FirebaseDatabase */; };
+		454D00E92A0C22B30048D3E3 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 454D00E82A0C22B30048D3E3 /* MessageKit */; };
 		4559FA04282FF11900DA9127 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4559FA03282FF11800DA9127 /* ConversationTableViewCell.swift */; };
+		45727FC62A0D30AE0070AB5D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45727FC52A0D30AE0070AB5D /* NetworkManager.swift */; };
+		45727FC82A0D30D70070AB5D /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45727FC72A0D30D70070AB5D /* NetworkManagerProtocol.swift */; };
+		45727FCA2A0D30E80070AB5D /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45727FC92A0D30E80070AB5D /* EndPoints.swift */; };
+		45727FCC2A0D311E0070AB5D /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45727FCB2A0D311E0070AB5D /* RequestManager.swift */; };
+		45727FCE2A0D31400070AB5D /* SentimentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45727FCD2A0D31400070AB5D /* SentimentModel.swift */; };
 		45766A472743A87A00F59FDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45766A462743A87A00F59FDA /* AppDelegate.swift */; };
 		45766A492743A87A00F59FDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45766A482743A87A00F59FDA /* SceneDelegate.swift */; };
 		45766A4B2743A87A00F59FDA /* ConversationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45766A4A2743A87A00F59FDA /* ConversationsViewController.swift */; };
@@ -25,20 +29,31 @@
 		45766A6B2743AABF00F59FDA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45766A6A2743AABF00F59FDA /* ProfileViewController.swift */; };
 		45766A6E2743C0BA00F59FDA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45766A6D2743C0BA00F59FDA /* Extensions.swift */; };
 		459A28E92827088300085D6E /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459A28E82827088300085D6E /* StorageManager.swift */; };
-		459A28EC282708BB00085D6E /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 459A28EB282708BB00085D6E /* FirebaseStorage */; };
 		45A149E22746A4B1000197C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 45A149E12746A4B1000197C6 /* GoogleService-Info.plist */; };
-		45A1961E2826A80B00749B20 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = 45A1961D2826A80B00749B20 /* MessageKit */; };
-		45A196212826A8BA00749B20 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 45A196202826A8BA00749B20 /* JGProgressHUD */; };
-		45A196252826AE6500749B20 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 45A196242826AE6500749B20 /* SDWebImage */; };
-		45A196272826AE6500749B20 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 45A196262826AE6500749B20 /* SDWebImageMapKit */; };
 		45A196292826B75600749B20 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A196282826B75600749B20 /* ChatViewController.swift */; };
 		45BFAC7C2813FE8A0051CF3E /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BFAC7B2813FE8A0051CF3E /* DatabaseManager.swift */; };
-		45DDD8B92821D197009C1331 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 45DDD8B82821D197009C1331 /* FacebookLogin */; };
+		45C827F12A0C057100C9E0C5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 45C827F02A0C057100C9E0C5 /* FirebaseAuth */; };
+		45C827F32A0C057100C9E0C5 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 45C827F22A0C057100C9E0C5 /* FirebaseDatabase */; };
+		45C827F52A0C057100C9E0C5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 45C827F42A0C057100C9E0C5 /* FirebaseStorage */; };
+		45C827F82A0C074500C9E0C5 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 45C827F72A0C074500C9E0C5 /* JGProgressHUD */; };
+		45C827FB2A0C07F700C9E0C5 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 45C827FA2A0C07F700C9E0C5 /* SDWebImage */; };
+		45C827FE2A0C092C00C9E0C5 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 45C827FD2A0C092C00C9E0C5 /* FacebookCore */; };
+		45C828002A0C092C00C9E0C5 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 45C827FF2A0C092C00C9E0C5 /* FacebookLogin */; };
+		45C828062A0C12BB00C9E0C5 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 45C828052A0C12BB00C9E0C5 /* Realm */; };
+		45C828082A0C12BB00C9E0C5 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45C828072A0C12BB00C9E0C5 /* RealmSwift */; };
+		45D3F93F2A0553FF00A0DA8C /* TFIDFVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3F93E2A0553FF00A0DA8C /* TFIDFVector.swift */; };
+		45D3F9432A0559B300A0DA8C /* svc_sentiment_analysis.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 45D3F9422A0559B300A0DA8C /* svc_sentiment_analysis.mlpackage */; };
+		45D3F9452A055C5B00A0DA8C /* SwiftTfIdf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D3F9442A055C5B00A0DA8C /* SwiftTfIdf.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4515112D2833DD6600351FF7 /* LocationPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewController.swift; sourceTree = "<group>"; };
 		4559FA03282FF11800DA9127 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
+		45727FC52A0D30AE0070AB5D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		45727FC72A0D30D70070AB5D /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		45727FC92A0D30E80070AB5D /* EndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		45727FCB2A0D311E0070AB5D /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		45727FCD2A0D31400070AB5D /* SentimentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentimentModel.swift; sourceTree = "<group>"; };
 		45766A432743A87A00F59FDA /* ChatWithMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatWithMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45766A462743A87A00F59FDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45766A482743A87A00F59FDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +73,9 @@
 		45A149E12746A4B1000197C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		45A196282826B75600749B20 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		45BFAC7B2813FE8A0051CF3E /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		45D3F93E2A0553FF00A0DA8C /* TFIDFVector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFIDFVector.swift; sourceTree = "<group>"; };
+		45D3F9422A0559B300A0DA8C /* svc_sentiment_analysis.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; name = svc_sentiment_analysis.mlpackage; path = ../../../../../../Downloads/svc_sentiment_analysis.mlpackage; sourceTree = "<group>"; };
+		45D3F9442A055C5B00A0DA8C /* SwiftTfIdf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTfIdf.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,20 +83,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45A196252826AE6500749B20 /* SDWebImage in Frameworks */,
-				452254282821CBA500426E3A /* FirebaseDatabase in Frameworks */,
-				452254262821CBA500426E3A /* FirebaseAuth in Frameworks */,
-				45DDD8B92821D197009C1331 /* FacebookLogin in Frameworks */,
-				45A1961E2826A80B00749B20 /* MessageKit in Frameworks */,
-				459A28EC282708BB00085D6E /* FirebaseStorage in Frameworks */,
-				45A196272826AE6500749B20 /* SDWebImageMapKit in Frameworks */,
-				45A196212826A8BA00749B20 /* JGProgressHUD in Frameworks */,
+				45C827F82A0C074500C9E0C5 /* JGProgressHUD in Frameworks */,
+				45C827FE2A0C092C00C9E0C5 /* FacebookCore in Frameworks */,
+				45C827F32A0C057100C9E0C5 /* FirebaseDatabase in Frameworks */,
+				45C827F12A0C057100C9E0C5 /* FirebaseAuth in Frameworks */,
+				45C827F52A0C057100C9E0C5 /* FirebaseStorage in Frameworks */,
+				45C828002A0C092C00C9E0C5 /* FacebookLogin in Frameworks */,
+				45C828062A0C12BB00C9E0C5 /* Realm in Frameworks */,
+				45C827FB2A0C07F700C9E0C5 /* SDWebImage in Frameworks */,
+				45C828082A0C12BB00C9E0C5 /* RealmSwift in Frameworks */,
+				454D00E92A0C22B30048D3E3 /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45727FC42A0D309A0070AB5D /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				45727FC52A0D30AE0070AB5D /* NetworkManager.swift */,
+				45727FC72A0D30D70070AB5D /* NetworkManagerProtocol.swift */,
+				45727FC92A0D30E80070AB5D /* EndPoints.swift */,
+				45727FCB2A0D311E0070AB5D /* RequestManager.swift */,
+				45727FCD2A0D31400070AB5D /* SentimentModel.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
 		45766A3A2743A87A00F59FDA = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +132,7 @@
 		45766A452743A87A00F59FDA /* ChatWithMe */ = {
 			isa = PBXGroup;
 			children = (
+				45727FC42A0D309A0070AB5D /* NetworkManager */,
 				45766A5E2743A8F400F59FDA /* Resources */,
 				45766A5D2743A8EC00F59FDA /* ViewModel */,
 				45766A5C2743A8D300F59FDA /* Model */,
@@ -138,6 +171,9 @@
 		45766A5C2743A8D300F59FDA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				45D3F9422A0559B300A0DA8C /* svc_sentiment_analysis.mlpackage */,
+				45D3F93E2A0553FF00A0DA8C /* TFIDFVector.swift */,
+				45D3F9442A055C5B00A0DA8C /* SwiftTfIdf.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,14 +239,16 @@
 			);
 			name = ChatWithMe;
 			packageProductDependencies = (
-				452254252821CBA500426E3A /* FirebaseAuth */,
-				452254272821CBA500426E3A /* FirebaseDatabase */,
-				45DDD8B82821D197009C1331 /* FacebookLogin */,
-				45A1961D2826A80B00749B20 /* MessageKit */,
-				45A196202826A8BA00749B20 /* JGProgressHUD */,
-				45A196242826AE6500749B20 /* SDWebImage */,
-				45A196262826AE6500749B20 /* SDWebImageMapKit */,
-				459A28EB282708BB00085D6E /* FirebaseStorage */,
+				45C827F02A0C057100C9E0C5 /* FirebaseAuth */,
+				45C827F22A0C057100C9E0C5 /* FirebaseDatabase */,
+				45C827F42A0C057100C9E0C5 /* FirebaseStorage */,
+				45C827F72A0C074500C9E0C5 /* JGProgressHUD */,
+				45C827FA2A0C07F700C9E0C5 /* SDWebImage */,
+				45C827FD2A0C092C00C9E0C5 /* FacebookCore */,
+				45C827FF2A0C092C00C9E0C5 /* FacebookLogin */,
+				45C828052A0C12BB00C9E0C5 /* Realm */,
+				45C828072A0C12BB00C9E0C5 /* RealmSwift */,
+				454D00E82A0C22B30048D3E3 /* MessageKit */,
 			);
 			productName = ChatWithMe;
 			productReference = 45766A432743A87A00F59FDA /* ChatWithMe.app */;
@@ -241,12 +279,12 @@
 			);
 			mainGroup = 45766A3A2743A87A00F59FDA;
 			packageReferences = (
-				452254242821CBA500426E3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				45DDD8B72821D197009C1331 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
-				45A1961C2826A80B00749B20 /* XCRemoteSwiftPackageReference "MessageKit" */,
-				45A1961F2826A8B900749B20 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
-				45A196222826ADB800749B20 /* XCRemoteSwiftPackageReference "realm-swift" */,
-				45A196232826AE6500749B20 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				45C827EF2A0C057100C9E0C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				45C827F62A0C074500C9E0C5 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				45C827F92A0C07F700C9E0C5 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+				45C827FC2A0C092C00C9E0C5 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				45C828042A0C12BB00C9E0C5 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				454D00E72A0C22B30048D3E3 /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			productRefGroup = 45766A442743A87A00F59FDA /* Products */;
 			projectDirPath = "";
@@ -276,20 +314,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45727FC62A0D30AE0070AB5D /* NetworkManager.swift in Sources */,
+				45D3F93F2A0553FF00A0DA8C /* TFIDFVector.swift in Sources */,
 				45766A612743AA3100F59FDA /* LoginViewController.swift in Sources */,
 				45BFAC7C2813FE8A0051CF3E /* DatabaseManager.swift in Sources */,
 				45766A632743AA4F00F59FDA /* RegisterViewController.swift in Sources */,
 				45766A692743AAA400F59FDA /* NewConversationViewController.swift in Sources */,
 				45766A4B2743A87A00F59FDA /* ConversationsViewController.swift in Sources */,
+				45727FCC2A0D311E0070AB5D /* RequestManager.swift in Sources */,
+				45727FCE2A0D31400070AB5D /* SentimentModel.swift in Sources */,
 				45766A672743AA8B00F59FDA /* VideoPlayerViewController.swift in Sources */,
 				45766A6E2743C0BA00F59FDA /* Extensions.swift in Sources */,
 				45766A472743A87A00F59FDA /* AppDelegate.swift in Sources */,
+				45727FCA2A0D30E80070AB5D /* EndPoints.swift in Sources */,
 				45766A6B2743AABF00F59FDA /* ProfileViewController.swift in Sources */,
 				45766A492743A87A00F59FDA /* SceneDelegate.swift in Sources */,
 				4559FA04282FF11900DA9127 /* ConversationTableViewCell.swift in Sources */,
 				45A196292826B75600749B20 /* ChatViewController.swift in Sources */,
 				45766A652743AA7500F59FDA /* PhotoViewerViewController.swift in Sources */,
 				4515112E2833DD6600351FF7 /* LocationPickerViewController.swift in Sources */,
+				45D3F9432A0559B300A0DA8C /* svc_sentiment_analysis.mlpackage in Sources */,
+				45D3F9452A055C5B00A0DA8C /* SwiftTfIdf.swift in Sources */,
+				45727FC82A0D30D70070AB5D /* NetworkManagerProtocol.swift in Sources */,
 				459A28E92827088300085D6E /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,15 +561,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		452254242821CBA500426E3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
-			};
-		};
-		45A1961C2826A80B00749B20 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+		454D00E72A0C22B30048D3E3 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/MessageKit/MessageKit";
 			requirement = {
@@ -531,23 +569,23 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		45A1961F2826A8B900749B20 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+		45C827EF2A0C057100C9E0C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		45C827F62A0C074500C9E0C5 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.0.0;
 			};
 		};
-		45A196222826ADB800749B20 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		45A196232826AE6500749B20 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+		45C827F92A0C07F700C9E0C5 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
 			requirement = {
@@ -555,56 +593,74 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		45DDD8B72821D197009C1331 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+		45C827FC2A0C092C00C9E0C5 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
-				branch = main;
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		45C828042A0C12BB00C9E0C5 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		452254252821CBA500426E3A /* FirebaseAuth */ = {
+		454D00E82A0C22B30048D3E3 /* MessageKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 452254242821CBA500426E3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		452254272821CBA500426E3A /* FirebaseDatabase */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 452254242821CBA500426E3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseDatabase;
-		};
-		459A28EB282708BB00085D6E /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 452254242821CBA500426E3A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseStorage;
-		};
-		45A1961D2826A80B00749B20 /* MessageKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 45A1961C2826A80B00749B20 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			package = 454D00E72A0C22B30048D3E3 /* XCRemoteSwiftPackageReference "MessageKit" */;
 			productName = MessageKit;
 		};
-		45A196202826A8BA00749B20 /* JGProgressHUD */ = {
+		45C827F02A0C057100C9E0C5 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 45A1961F2826A8B900749B20 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			package = 45C827EF2A0C057100C9E0C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		45C827F22A0C057100C9E0C5 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C827EF2A0C057100C9E0C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		45C827F42A0C057100C9E0C5 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C827EF2A0C057100C9E0C5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		45C827F72A0C074500C9E0C5 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C827F62A0C074500C9E0C5 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
 		};
-		45A196242826AE6500749B20 /* SDWebImage */ = {
+		45C827FA2A0C07F700C9E0C5 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 45A196232826AE6500749B20 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			package = 45C827F92A0C07F700C9E0C5 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
 		};
-		45A196262826AE6500749B20 /* SDWebImageMapKit */ = {
+		45C827FD2A0C092C00C9E0C5 /* FacebookCore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 45A196232826AE6500749B20 /* XCRemoteSwiftPackageReference "SDWebImage" */;
-			productName = SDWebImageMapKit;
+			package = 45C827FC2A0C092C00C9E0C5 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
 		};
-		45DDD8B82821D197009C1331 /* FacebookLogin */ = {
+		45C827FF2A0C092C00C9E0C5 /* FacebookLogin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 45DDD8B72821D197009C1331 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			package = 45C827FC2A0C092C00C9E0C5 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
 			productName = FacebookLogin;
+		};
+		45C828052A0C12BB00C9E0C5 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C828042A0C12BB00C9E0C5 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		45C828072A0C12BB00C9E0C5 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45C828042A0C12BB00C9E0C5 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
